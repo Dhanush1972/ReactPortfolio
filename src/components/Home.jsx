@@ -8,12 +8,24 @@ export const Home = () => {
     >
       <RevealOnScroll>
         <div className="text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
-            Hi, I'm Dhanush
-          </h1>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+            {/* TODO: Place profile photo at public/dhanush.jpg */}
+            <img
+              src={`${import.meta.env.BASE_URL}dhanush.jpg`}
+              alt="Dhanush"
+              className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover ring-2 ring-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] shrink-0"
+              onError={(e) => {
+                // Keep layout clean if public/dhanush.jpg has not been added yet
+                e.currentTarget.style.display = "none";
+              }}
+            />
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight text-center md:text-left">
+              Hi, I'm Dhanush
+            </h1>
+          </div>
 
-          <h3 className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-            Web Developer | Designer | Coder
+          <h3 className="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            .NET Full Stack Developer | C# | ASP.NET Core | Angular | SQL
           </h3>
           <div className="flex justify-center space-x-4">
             <a
